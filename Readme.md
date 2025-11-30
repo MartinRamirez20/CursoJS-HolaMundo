@@ -333,3 +333,98 @@ Resumiendo: Sabiendo que a = 10.
 ## Operadores lógicos
 Aqui tenemos 'AND', 'OR' Y 'NOT'
 - AND: &&
+- OR: ||
+- NOT: !
+
+AND se expresa asi &&.
+Ejemplo:
+  console.log(true && true);
+
+Si lo que se encuentra a la izquierda es 'true' y lo de la derecha tambien imprimira 'true'.
+Pero si lo que esta a la izquierda es 'true' y a la derecha false y viceversa dara false.
+Ambos deben ser 'true' para que imprima 'true'.
+
+Para el OR el cual se expresa ||.
+Solo con que uno sea 'true', imprimira 'true'.
+Para que imprima 'false' es que ambos deban ser 'false.
+Ejemplo:
+  console.log(false || false);
+
+El operador NOT se expresa con ! antes de la variable
+Ejemplo:
+  let variable = true
+  console.log(!variable);
+Esto lo invertira y pasara de mostrar 'true' a mostrar 'false'
+
+
+### Operaciones de 'short circuit'
+Aqui vamos a ver un uso especial para los operadores lógicos.
+
+Para usar estas operaciones primero debemos ver que valores son evaluados en 'false'. Cuando usemos OR o AND podemos usar valores como string, objetos o arrays los que nos devolveran 'true' o 'false'.
+
+Ejemplo:
+[] || {} //imprimira []
+
+Ejemplo:
+[] && {} //imprimira {}
+
+
+Esto debido a que el OR imprime el primero que aparece en 'true' de los evaluados.
+Mientras que el AND imprime el ultimo 'true' evaluado.
+
+Valores que devuelven 'false' o llamados falsy:
+- false
+- 0
+- ''
+- null
+- undefined
+- NaN //Este es el valor que se nos devuelve al realizar una operacion matematica que no puede calcular un numero valido.
+
+Ejemplo mas claro en /UltimateJS/02-operadores/05-falsy.js.
+
+
+### Operadores bitwise
+Un bit es un digito en binario, puede tomar el valor de 0 y 1.
+
+Un byte esta compuesto por 8 bits.
+- 0: 00000000
+- 1: 00000001
+- 2: 00000010
+- 3: 00000011
+- 4: 00000100
+- 5: 00000101
+- 6: 00000110
+
+Y asi sucesivamente.
+Asi podemos escribir los numeros en base binaria.
+
+El operador lógico de bitwise utilizara la base binaria de los numeros para poder operar.
+En bitwise tambien tenemos OR -> |, AND -> &
+
+Ejemplo con OR (|):
+  console.log(1 | 3); // imprimira 3.
+
+En el operador OR cuando comprobamos un 1 y 0 o 0 y 1 dara 1.
+
+Con el operador de AND (&) si el numero a comprobar es 0 y el otro 1 dara como resultado 0. Si comprobamos 1 y 1 dara como resultado 1.
+
+Ejemplo mas claro en /UltimateJS/02-operadores/06-bitwise.js.
+
+
+## Orden de operadores
+Como sabemos las oeraciones aritmeticas tienen un orden por defecto, sin embargo podemos modificar el orden de estas si hacemos uso de ().
+
+Ejemplo:
+
+let resultado = 8/2*(2+2);
+
+console.log(resultado); //Imprimira 16
+
+Ejemplo con ():
+
+let resultado2 = 8/(2*(2+2));
+
+console.log(resultado2); // Imprimira 1
+
+
+## Operador ternario
