@@ -669,3 +669,50 @@ Esto lo podemos usar para for, for in, for of y do while.
 
 
 ### switch
+
+Esta instruccion nos ayudara a indicarle al codigo explicitamente donde queremos que se vaya dependiendo del valor de una variable.
+
+Sintaxis:
+
+switch (accion) {
+  case 'caso' : expresion; 
+  break;
+}
+
+El break es importante, si no se coloca todo lo que va despues del 'case' seleccionado seguira ejecutandose, independientemente del valor de la variable.
+
+Ejemplo mas claro en /UltimateJS/03-control-flujo/
+10-switch.js
+
+adicional tenemos la instruccion 'default' la cual entrara cuando ninguna de las anteriores condiciones se cumpla.
+
+Podriamos pensar esto como un if de multiples opciones, y cuando ninguna se cumple el 'default' actuaría como un 'else'.
+
+Existen librerias las cuales usan switch, tal como 'Redux', es por eso que es importante aprendernos parte de esta sintaxis.
+
+
+
+# Seccion de ejercicios
+
+## Ejercicio 1
+
+Construya una funcion que reciba 2 parametros, los cuales sean comparados e impriman el numero mayor.
+
+solucion en /UltimateJS/04-ejercicios/01.js
+
+
+## Ejercicio 2
+
+Construya una funcion que reciba 2 parametros: 'ancho' y 'alto'. Esta funcion deberá devolver el nombre de la resolucion dependiendo de los valores pasados por parametros.
+Los nombres de las resoluciones soportadas son:
+- 8k: 7680 x 4320
+- 4k: 3840 x 2160
+- WQHD: 2560 X 1440
+- FHD: 1920 X 1080
+- HD: 1280 X 720
+Si la resolucion es menor a estas deberá imprimir falso.
+
+Para que imprima el nombre de la resolución esperada el valor de 'ancho' y 'alto' deben ser mayores que la resolucion anterior al mismo tiempo.
+
+
+## Ejercicio 3
