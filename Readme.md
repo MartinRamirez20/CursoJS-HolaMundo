@@ -533,6 +533,8 @@ while (i<10) {
   i++;
 }
 
+Ejemplo mas claro en /UltimateJS/03-control-flujo/03-while.js.
+
 Los ciclos while pueden ser bucles infinitos si no se trata con cuidado las condiciones.
 
 Es el ejemplo podemos ver que que el while empezara comprobando 'i'.
@@ -546,4 +548,124 @@ Siguiendo esta misma logica si queremos que nuestro codigo imprima hasta 10 pode
 - (i<11)
 - (i<=10)
 
-Ejemplo mas claro en /UltimateJS/03-control-flujo/03-while.js.
+
+### do while
+
+Al hacer un do while buscamos que la condicion se ejecute al final. 
+
+sintaxis:
+
+do {
+  expresion;
+} while (condicion);
+
+Esto permitira que siempre se ejecute una porcion de codigo de primeras, y luego evaluara la condicion que hay.
+
+
+### for
+
+Este ciclo contiene todo dentro de una misma linea.
+
+Se compone por 3 expresiones:
+- Incializacion: let i = 0;
+- Comparacion: i <= 10;
+- Iteracion: i++;
+
+Sintaxis:
+
+for (let i=0;i<=10;i++) {
+  console.log(i);
+}
+
+Se imprime 'i' 10 veces.
+
+
+### for of
+
+El while, do while y for tienen en comun el que nos permite calcular como realizar una iteracion.
+Ingresamos manualmente el valor de la variable, su comparacion y la iteración.
+
+Pero si tenemos que iterar un listado de elementos podemos hacerlo sencillamente con:
+
+Ejemplo:
+
+let animales = ['perro','gato','pez'];
+
+for (let animal of animales) {
+  console.log(animal);
+}
+
+Esto nos imprimira cada uno de los elementos de la lista animales.
+Podemos decir que es como si le dijeramos que recorriera cada uno de los elementos de animales y lo guardara en la variable 'animal'. La cual se imprimira mas tarde.
+
+
+### for in
+
+Nos sirve para poder iterar las propiedades de un objeto.
+
+Ejemplo:
+
+let usuario = {
+  id: 1,
+  name: 'Pedro',
+  age: 21,
+};
+
+for (let propiedad in usuario ) {
+ console.log(propiedad);
+}
+
+Esto nos imprimira unicamente las propiedades del objeto.
+Para obtener la propiedad y tambien su valor podemos realizarlo manteniendo el mismo for y modificando su 'console.log();'
+
+Ejemplo:
+
+for (let propiedad in usuario ) {
+ console.log(propiedad, usuario[propiedad]);
+}
+
+Tambien podemos iterar los objetos de un arreglo con un 'for of', pero es mejor realizarlo con un 'for in'.
+
+
+### continue y break
+
+Existiran momentos donde necesitaremos detener la ejecucion de algun loop, independientemente del que sea.
+
+- break: nos permite salirnos del loop.
+- continue: nos permite saltarnos una iteración.
+
+Ejemplo implementacion continue con while:
+(Se puede implementar con todos los loops)
+
+let i = 0;
+
+while (i < 6) {
+  i++;
+  if (i === 2) {
+    continue;
+  }
+  console.log(i);
+}
+
+Esto hara que a la hora de imprimir 'i' no nos mostrara el valor de 2 en la impresión, ya que saltaremos la iteración continuando a la siguiente, el 3.
+
+Ejemplo implementacion break con while:
+
+let i = 0;
+
+while (i < 6) {
+  i++;
+  if (i === 2) {
+    continue;
+  } else if (i === 4) {
+    break
+  }
+  console.log(i);    
+}
+
+Esto hara que cuando 'i' valga 4 se detenga la ejecucion del codigo, o en este caso deteniendo el ciclo while antes de que termine naturalmente por su condición.
+
+Esto lo podemos usar para for, for in, for of y do while.
+
+
+### switch
