@@ -696,14 +696,14 @@ Existen librerias las cuales usan switch, tal como 'Redux', es por eso que es im
 
 ## Ejercicio 1
 
-Construya una funcion que reciba 2 parametros, los cuales sean comparados e impriman el numero mayor.
+Construya una función que reciba 2 parametros, los cuales sean comparados e impriman el numero mayor.
 
-solucion en /UltimateJS/04-ejercicios/01.js
+Solución en /UltimateJS/04-ejercicios/01.js
 
 
 ## Ejercicio 2
 
-Construya una funcion que reciba 2 parametros: 'ancho' y 'alto'. Esta funcion deberá devolver el nombre de la resolucion dependiendo de los valores pasados por parametros.
+Construya una función que reciba 2 parametros: 'ancho' y 'alto'. Esta función deberá devolver el nombre de la resolucion dependiendo de los valores pasados por parametros.
 Los nombres de las resoluciones soportadas son:
 - 8k: 7680 x 4320
 - 4k: 3840 x 2160
@@ -714,5 +714,35 @@ Si la resolucion es menor a estas deberá imprimir falso.
 
 Para que imprima el nombre de la resolución esperada el valor de 'ancho' y 'alto' deben ser mayores que la resolucion anterior al mismo tiempo.
 
+Solución en /UltimateJS/04-ejercicios/02.js
+
 
 ## Ejercicio 3
+
+Construya una función que nos permita obtener un elemento por su indice, debemos pasarle el array y el indice.
+El valor que nosotros le pasemos como indice no puede ser menor que 0 y el elemento tiene que existir en el array.
+
+Si tenemos un array con 2 elementos no le podemos pasar 4, y si se ingresa un valor mayor al numero de elementos del array tendra que devolver que el indice no es valido.
+
+Solución en /UltimateJS/04-ejercicios/03.js
+
+
+## Ejercicio 4
+
+Escriba algoritmo que nos imprima unicamente los numeros impares pero del 0 al 10 usando loops o bucles.
+
+Soluciones en /UltimateJS/04-ejercicios/04.js
+
+## Ejercicio 5
+
+Escriba un algoritmo en una función que devuelva el numero mayor y menor de un array usando el siguiente array
+
+[2, 5, 7, 15, -5, -100, 55]
+
+Para mas complejidad hacerlo sin iterarlo mas de una vez y sin organizarlo.
+
+Solución en /UltimateJS/04-ejercicios/05.js
+
+
+## Ejercicio 6
+
