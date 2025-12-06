@@ -746,3 +746,157 @@ Solución en /UltimateJS/04-ejercicios/05.js
 
 ## Ejercicio 6
 
+Nuevamente con el array del ejercicio anterior:
+
+[2, 5, 7, 15, -5, -100, 55]
+
+Escriba un algoritmo que devuelva la cantidad de números positivos que hay en este array.
+
+Solución en /UltimateJS/04-ejercicios/06.js
+
+
+## Ejercicio 7
+
+Cree un algoritmo que devuelva el precio de un producto sumado su impuesto. Tendra que imprimir el precio completo.
+
+Solución en /UltimateJS/04-ejercicios/07.js
+
+
+## Ejercicio 8
+
+Construya una funcion que contenga un algoritmo el cual deberá tomar un array de objetos y devuelva un array de pares.
+
+El array tendra un listado de 3 objetos cada uno con las dos propiedades 'id' y 'name' que a su vez deberán contener sus respectivos valores.
+
+El array de pares hace referencia a un array hecho con arrays. El primer elemento es un identificador, el siguiente valor es el objeto completo.
+
+Ejemplo con sintaxis:
+
+let arreglo = [{
+  id: 1,
+  name: 'Juan',
+}, {
+  id: 2,
+  name: 'Fernando',
+}, {
+  id: 3,
+  name: 'Pedro',
+}];
+
+array de pares:
+
+let arreglo_pares = [
+  [1, {id:1, name:'Juan'}],
+  [2, {id:2, name:'Fernando'}],
+  [3, {id:3, name:'Pedro'}],
+];
+
+Solución en /UltimateJS/04-ejercicios/08.js
+(Ni yo lo entendi)
+
+
+## Ejercicio 9
+
+Este es un ejercicio similar al anterior
+
+Debemos crear una función que en base a un array de pares nos devuelva un array donde cada uno de los elementos sea un objeto.
+
+Esta vez va a ser un poco diferente:
+
+let arreglo = [
+  [1, {name:'Felipe'}],
+  [2, {name:'Andres'}],
+];
+
+Como podemos observar este array de pares es diferente al del ejercicio anterior, ya que este no contiene un campo 'id', por ende debemos crear este campo y darle por el valor el numero que aparece de primeras en el array de pares.
+
+Solución en /UltimateJS/04-ejercicios/09.js
+
+
+## Ejercicio 10
+
+Cree una funcion que contenga un array de longitud 'n' y que sus elementos sean numeros de 1 hasta 'n'.
+
+Solución en /UltimateJS/04-ejercicios/10.js
+
+
+# Objetos
+
+## Introducción
+
+Ya sabemos trabajar con variables, las cuales usamos para guardar datos.
+
+Los objetos tienen en comun que pueden agrupar todos estos datos en un mismo objeto (valga la redundancia) para asi trabajar mas facil.
+
+Sintaxis:
+
+let user = {};
+
+Tambien podemos colocar objetos dentro de objetos.
+
+Manejar las cosas de esta manera es conocido como POO, programación orientada a objetos, encapsulando datos y encapsulamiento.
+
+Una sintaxis mas clara de los objetos la podemos encontrar en /UltimateJS/05-objetos/01-intro.js
+
+
+### Funciones anonimas
+
+Dentro de los objetos podemos declarar multiples cosas, una de estas son funciones anonimas, la cual nos sirve para situaciones donde la propiedad tendra un nombre y colocamos la funcion sin nombre ya que hacerlo seria redundante.
+
+Sintaxis
+
+let objeto = {
+  nombreFuncion: function () {codigo}
+}
+
+
+## Dinamismo
+
+En JS los objetos son dinamicos, es decir que podemos agregar o quitar propiedades a nuestro antojo y ademas podemos cambiar el valor de estos cuando queramos.
+
+A continuación se mostrara un ejemplo haciendo uso de una constante (const), que como habiamos comentado antes, no pueden ser modificadas, supuestamente.
+
+Ejemplo:
+
+const user = {id: 1};
+
+user.name = 'Pedro';
+
+user.guardar = function ( ) {
+    console.log('Guardando', user.name);
+}
+
+user.guardar();
+
+Al hacer uso de la palabra reservada 'const' para definir una variable no nos dejara es cambiar el valor de una variable.
+
+No podemos hacer un:
+
+const user = {id:1};
+user = 1;
+
+Como vemos no podemos modificar directamente el valor de la constante, sin embargo podemos agregarle propiedades y quitarselas a los arrays y objetos que ya tengan.
+
+Esto lo podemos hacer tambien haciendo uso de la palabra reservada 'delete'
+
+Sintaxis:
+
+delete user.name;
+
+Debemos tener en cuenta que cuando definimos una variable con la palabra reservada de 'const' no podemos cambiarle el valor a esta misma variable, pero si el valor asignado es un objeto si podemos cambiarle el valor a este objeto, agregarle o quitarle.
+
+Si de verdad esperamos que no pueda ser modificado el objeto ni con sus propiedades o valores podemos usar 'Object.freeze();'
+
+Sintaxis:
+
+const user1 = Object.freeze({id:1});
+
+Se vera igual pero no dejara agregar ninguna propiedad ni modificarla.
+
+Sin embargo si queremos cambiarle los valores a las propiedades que ya tiene pero no agregar o quitar propiedades podemos usar: 'Object.seal();'
+
+Sintaxis:
+
+const user1 = Object.seal({id:1});
+
+## Factory functions
