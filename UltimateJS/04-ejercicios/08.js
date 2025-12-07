@@ -19,7 +19,7 @@ function array_pares (arreglo) {
     let nuevo_arreglo = [];
     for (let indice in arreglo) {
         let elemento = arreglo[indice];
-        nuevo_arreglo[indice] = [elemento.id, elemento ]
+        nuevo_arreglo[indice] = [elemento.id, elemento]
     }
     return nuevo_arreglo
 }
