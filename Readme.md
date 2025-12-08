@@ -900,3 +900,96 @@ Sintaxis:
 const user1 = Object.seal({id:1});
 
 ## Factory functions
+
+Estas funciones nos permiten crear objetos de maneras sencillas y poco repetitivas.
+
+Para ejemplo usaremos el objeto de usuario visto en el punto anterior.
+
+let user = {
+    id: 1,
+    email: 'correo@example.com',
+    name: 'Pedro',
+    activo: true,
+    recuperarClave: function () {
+        console.log('Recuperando clave...')
+    },
+};
+
+Y crearemos un nuevo usuario
+
+let user1 = {
+    id: 2,
+    email: 'correo2@example.com',
+    name: 'juan',
+    activo: false,
+    recuperarClave: function () {
+        console.log('Recuperando clave...');
+    },
+};
+
+Si necesitamos crear un nuevo usuario hacerlo de esta manera hace que el codigo sea muy repetitivo, aqui entrar las factory functions.
+
+Estas por defecto usan camelCase, cuando las definamos debemos dejar la primera palabra en minusculas y la segunda palabra con su primera letra en mayusculas, sin dejar espacio entre la primera y la segunda palabra. Por lo general comienzan con la palabra 'crear' o 'create'
+
+Ejemplo: crearFuncion() {}
+
+Para poder entender el funcionamiento de estas funciones usaremos el ejemplo descrito en la parte superior del tema.
+
+Con las factory functions lo que buscamos es encapsular un objeto en una funcion, asi cada vez que queramos agregar nuevos usuarios, haciendo uso de nuestro ejemplo, no tengamos que crear el objeto una y otra vez.
+
+Una sintaxis mas clara de como definir y usar estas funciones la podemos hallar en: /UltimateJS/05-objetos/03-factory.js
+
+
+## Constructor Functions
+
+Para definir una funcion constructura necesitaremos crear una funcion, pero a esta le vamos a dar un nombre con el recurso que queramos que cree.
+
+Si queremos crear usuarios, debemos colocarle de nombre 'usuarios'.
+
+Para este tipo de funciones se nos pide usar UpperCamelCase o PascalCase, que son exactamente lo mismo. Estos nos dice que la inicial de cada palabra debe ir con Mayuscula.
+
+Para estas funciones usaremos una nueva palabra reservada: 'this.' la cual veremos a mayor profundidad mas adelante.
+
+Con esta palabra colocamos un '.' seguido del nombre de la propiedad que queremos asignarle al objeto.
+
+Ejemplo: 'this.id = 1;'
+
+Para crear un usuario en nuestra funcion debemos usar la palabra 'new'. Cuando usamos esta palabra creamos un objeto literal el cual se le vinculara al prototipo de la función con el objeto que acabamos de crear.
+
+Ejemplo: 'let usuario = new Usuario();'
+
+
+Despues, este objeto vacio se el asigna a la palabra reservada de 'this'. 'this' es el objeto vacio que se creo. Si la funcion de usuario no retorna nada, se retornara de manera automatica 'this'.
+
+Resumiendo
+- Paso 1: Se crea el objeto literal del aire.
+- Paso 2: Se vincula el prototipo (Lo veremos mas tarde)
+- Paso 3: Se el asigna a this el objeto que se acaba de crear.
+
+Cuando tenemos una propiedad en JS y le asignamos una funcion, ya sea constructora o factory functions, estas dejan de llamarse funciones y pasan a llamarse metodos. Podriamos decir que un metodo es una funcion que fue asignada a una propiedad de un objeto.
+
+
+## Atajos constructores
+
+No son atajos de teclado.
+
+Cuando definimos un objeto en JS lo podemos hacer asi: 'let obj = {};'
+
+Antes de continuar veremos algo mas.
+
+Podemos acceder a la funcion constructura de cada objeto, la cual nos indica con que constructor fue creado este objeto.
+
+Crear un objeto asi: 'let obj = {};' es igual que crearlo usando su propio constructor: 'let obj = new Object();'
+
+Tambien existen los siguientes metodos constructores:
+- new Array();
+- new String();
+- new Number();
+- new Boolean()
+
+Un ejemplo mas claro lo podemos hallar en: /UltimateJS/05-objetos/03-factory.js
+
+
+Si consultamos 'typeof "Hola"', nos devolvera 'string'. Pero si consultamos el de 'typeof new String()' nos devolvera 'object'.
+
+Esto tambien ocurrira con 'Number()' y 'Boolean()' debido a que JS cuando usamos strings o booleans JS lo envolvera en un objeto y cuando pasa a la siguiente linea de ejecución lo sacara a este objeto, tambien por eso aunque se declare como 'object' por eso podemos acceder a metodos de numeros o strings.
