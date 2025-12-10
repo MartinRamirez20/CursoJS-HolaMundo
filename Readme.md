@@ -993,3 +993,23 @@ Un ejemplo mas claro lo podemos hallar en: /UltimateJS/05-objetos/03-factory.js
 Si consultamos 'typeof "Hola"', nos devolvera 'string'. Pero si consultamos el de 'typeof new String()' nos devolvera 'object'.
 
 Esto tambien ocurrira con 'Number()' y 'Boolean()' debido a que JS cuando usamos strings o booleans JS lo envolvera en un objeto y cuando pasa a la siguiente linea de ejecución lo sacara a este objeto, tambien por eso aunque se declare como 'object' por eso podemos acceder a metodos de numeros o strings.
+
+Los numeros literales y booleans literales se comportan diferente a los creados por constructores.
+
+Para que nuestro codigo no tenga comportamientos inesperados o distintos usemos los strings literales en casos necesarios. Si creamos strings usando el constructor y luego necesitamos su valor podemos usar 'variable.valueOf()'
+
+Los boolean y numbers tambien tienen la propiedad 'valueOf()'.
+
+
+## Funciones
+
+Las funciones en JS tambien son objetos de primera clase, es decir, estas funciones pueden ser asignadas a otras variables como argumentos a otras funciones o retornadas de otras funciones.
+
+Estas tambien tienen propiedades, las podemos ver asi: 'funcion.name' la cual devolvera el nombre de la funcion. 'funcion.length' devolvera la cantidad de argumentos que recibe una funcion. 
+
+Tambien podemos tomar una funcion y definirsela a una variable o constantes como habiamos visto previamente. 
+
+Podemos pasar las funciones como argumentos y retornarlas dentro de otras funciones, como se ve en: /UltimateJS/05-objetos/06-funciones.js
+
+
+## Function
