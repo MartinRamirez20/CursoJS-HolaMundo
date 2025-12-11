@@ -1013,3 +1013,21 @@ Podemos pasar las funciones como argumentos y retornarlas dentro de otras funcio
 
 
 ## Function
+Como vimos, las funciones son sobjetos de primera clase, pueden ser asignados como variables, pasado como argumentos a otras funciones y retornadas en otras funciones.
+
+Existe un constructor llamado 'function' y hay otras propiedades que tienen las funciones que nos pueden servir para reutilizar codigo.
+
+Nunca usemos funciones con el constructor de 'function'. Es mejor definir las funciones de manera habitual.
+
+Existen los metodos 'call' y 'apply' que nos permiten extender objetos que hayamos definidos antes. 
+
+Ejemplos mas claros en: /UltimateJS/05-objetos/07-Function.js
+
+
+## Valor y referencia.
+
+Como habiamos visto antes tenemos los tipos primitivos y los tipos por referencia, siendo estos los objetos, arrays, y las funciones.
+
+Al almacenar las variables en memoria nos buscara el valor, pero con los objetos se guardara es una direccion de donde se encuentra el objeto.
+
+Si creamos dos objetos y los comparamos entre sí con '===' nos devolvera falso, ya que consultara la direccion en memoria y esta sera distinta una de la otra. Si queremos que nos devulva 'true' debemos almacenar la misma referencia al mismo objeto, y eso lo podemos hacer asignando el objeto a una variable.
