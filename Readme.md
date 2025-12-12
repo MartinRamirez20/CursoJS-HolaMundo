@@ -1030,4 +1030,15 @@ Como habiamos visto antes tenemos los tipos primitivos y los tipos por referenci
 
 Al almacenar las variables en memoria nos buscara el valor, pero con los objetos se guardara es una direccion de donde se encuentra el objeto.
 
-Si creamos dos objetos y los comparamos entre sí con '===' nos devolvera falso, ya que consultara la direccion en memoria y esta sera distinta una de la otra. Si queremos que nos devulva 'true' debemos almacenar la misma referencia al mismo objeto, y eso lo podemos hacer asignando el objeto a una variable.
+En las funciones, cada vez que definimos un parametro JS definira una variable especial para ese parametro.
+
+Los tipos de datos se copian cuando los asginamos a otras variables. Los de referencia se crea una referencia, los objetos, arrays y funciones.
+
+
+## Listar propiedades
+
+El constructor de 'Object()' tambien tiene metodos, cuando un constructor en JS tiene metodos a estos se le llaman metodos de clase o metodos estaticos.
+
+La mayoria de la informacion de esta seccion fue anotada en: /UltimateJS/05-objetos/09-list-props.js
+
+FIN DEL CURSO
